@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import getAndPrintName from '../src/cli.js';
+import { greeting, getName, greetingWithName } from '../src/cli.js';
 
-getAndPrintName();
+greeting();
+const userName = getName();
+greetingWithName(userName);
