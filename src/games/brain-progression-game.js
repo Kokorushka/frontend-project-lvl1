@@ -1,12 +1,12 @@
-import generateNumber from './common-functions.js';
+import generateNumber from '../utils.js';
+import createGame from '../index.js';
 
+const rulesOfGame = 'What number is missing in the progression?';
 const brainProgressionGame = () => {
-  const randomStartNumber = generateNumber(20);
-  const randomStepNumber = generateNumber(15) + 1; // +1 - чтобы шаг не равнялся нулю
-  const randomlengthProgression = generateNumber(10) + 5;
-  // +5 - чтобы длина прогрессии была не менее 5 элементов
-  const randomIndexForChange = generateNumber(randomlengthProgression - 1);
-  // -1 - чтобы индекс не превышал длину массива
+  const randomStartNumber = generateNumber(0, 31);
+  const randomStepNumber = generateNumber(1, 16);
+  const randomlengthProgression = generateNumber(5, 16);
+  const randomIndexForChange = generateNumber(0, randomlengthProgression);
   let sourceProgression = [];
   for (let i = 0; i < randomlengthProgression; i += 1) {
     const newNumberInProgression = (randomStartNumber + (i * randomStepNumber)).toString();
@@ -15,4 +15,4 @@ const brainProgressionGame = () => {
   const newProgresion = [...sourceProgression.slice(0, randomIndexForChange), '..', ...sourceProgression.slice(randomIndexForChange + 1)];
   return [newProgresion, sourceProgression[randomIndexForChange]];
 };
-export default brainProgressionGame;
+export default () => createGame(brainProgressionGame, rulesOfGame);

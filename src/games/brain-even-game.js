@@ -1,9 +1,10 @@
-import generateNumber from './common-functions.js';
+import generateNumber from '../utils.js';
+import createGame from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
-
+const rulesOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 const brainEvenGame = () => {
-  const randomNumber = generateNumber(200, 0.5);
+  const randomNumber = generateNumber(-100, 100);
   const expression = randomNumber.toString();
   let expectedResult;
   if (isEven(randomNumber)) {
@@ -14,4 +15,4 @@ const brainEvenGame = () => {
   return [expression, expectedResult];
 };
 
-export default brainEvenGame;
+export default () => createGame(brainEvenGame, rulesOfGame);
