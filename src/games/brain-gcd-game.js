@@ -2,7 +2,7 @@ import generateNumber from '../utils.js';
 import createGame from '../index.js';
 
 const rulesOfGame = 'Find the greatest common divisor of given numbers.';
-const brainGcdGame = () => {
+const createBrainGcdGame = () => {
   const randomNumber1 = generateNumber(1, 100);
   const randomNumber2 = generateNumber(1, 100);
   const expression = `${randomNumber1} ${randomNumber2}`;
@@ -14,4 +14,4 @@ const brainGcdGame = () => {
   }
   return [expression, greatCommonDelimeter.toString()];
 };
-export default () => createGame(brainGcdGame, rulesOfGame);
+export default () => createGame(createBrainGcdGame, rulesOfGame);

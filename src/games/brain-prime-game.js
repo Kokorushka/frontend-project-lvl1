@@ -14,9 +14,9 @@ const isPrime = (number) => {
   return true;
 };
 const rulesOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const brainPrimeGame = () => {
+const creteBrainPrimeGame = () => {
   const randomNumber = generateNumber(0, 1001);
   const expectedAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   return [randomNumber, expectedAnswer];
 };
-export default () => createGame(brainPrimeGame, rulesOfGame);
+export default () => createGame(creteBrainPrimeGame, rulesOfGame);

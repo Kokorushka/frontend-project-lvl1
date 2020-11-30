@@ -21,7 +21,7 @@ const getExpetedResult = (num1, num2, sign) => {
 };
 
 const rulesOfGame = 'What is the result of the expression?';
-const brainCalcGame = () => {
+const createBrainCalcGame = () => {
   const randomNumber1 = generateNumber(-100, 101);
   const randomNumber2 = generateNumber(-100, 101);
   const randomIndex = generateNumber(0, 3);
@@ -32,4 +32,4 @@ const brainCalcGame = () => {
   return [expression, expectedResult.toString()];
 };
 
-export default () => createGame(brainCalcGame, rulesOfGame);
+export default () => createGame(createBrainCalcGame, rulesOfGame);

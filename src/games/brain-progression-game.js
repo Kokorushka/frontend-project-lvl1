@@ -2,7 +2,7 @@ import generateNumber from '../utils.js';
 import createGame from '../index.js';
 
 const rulesOfGame = 'What number is missing in the progression?';
-const brainProgressionGame = () => {
+const createBrainProgressionGame = () => {
   const randomStartNumber = generateNumber(0, 31);
   const randomStepNumber = generateNumber(1, 16);
   const randomlengthProgression = generateNumber(5, 16);
@@ -15,4 +15,4 @@ const brainProgressionGame = () => {
   const newProgresion = [...sourceProgression.slice(0, randomIndexForChange), '..', ...sourceProgression.slice(randomIndexForChange + 1)];
   return [newProgresion, sourceProgression[randomIndexForChange]];
 };
-export default () => createGame(brainProgressionGame, rulesOfGame);
+export default () => createGame(createBrainProgressionGame, rulesOfGame);

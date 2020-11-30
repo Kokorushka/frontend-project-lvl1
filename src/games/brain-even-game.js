@@ -3,7 +3,7 @@ import createGame from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
 const rulesOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
-const brainEvenGame = () => {
+const createBrainEvenGame = () => {
   const randomNumber = generateNumber(-100, 100);
   const expression = randomNumber.toString();
   let expectedResult;
@@ -15,4 +15,4 @@ const brainEvenGame = () => {
   return [expression, expectedResult];
 };
 
-export default () => createGame(brainEvenGame, rulesOfGame);
+export default () => createGame(createBrainEvenGame, rulesOfGame);
