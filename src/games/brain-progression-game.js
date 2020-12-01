@@ -3,16 +3,20 @@ import createGame from '../index.js';
 
 const rulesOfGame = 'What number is missing in the progression?';
 const createBrainProgressionGame = () => {
-  const randomStartNumber = generateNumber(0, 31);
-  const randomStepNumber = generateNumber(1, 16);
-  const randomlengthProgression = generateNumber(5, 16);
-  const randomIndexForChange = generateNumber(0, randomlengthProgression);
-  let sourceProgression = [];
-  for (let i = 0; i < randomlengthProgression; i += 1) {
-    const newNumberInProgression = (randomStartNumber + (i * randomStepNumber)).toString();
-    sourceProgression = [...sourceProgression, newNumberInProgression];
+  const initial = generateNumber(0, 31);
+  const step = generateNumber(1, 16);
+  const lengthProgression = generateNumber(5, 16);
+  const indexForChange = generateNumber(0, lengthProgression);
+  const progression = [];
+  for (let i = 0; i < lengthProgression; i += 1) {
+    if (i === indexForChange) {
+      progression.push('..');
+    } else {
+      const newNumberInProgression = (initial + (i * step)).toString();
+      progression.push(newNumberInProgression);
+    }
   }
-  const newProgresion = [...sourceProgression.slice(0, randomIndexForChange), '..', ...sourceProgression.slice(randomIndexForChange + 1)];
-  return [newProgresion, sourceProgression[randomIndexForChange]];
+  const expectedResult = (initial + (indexForChange * step)).toString();
+  return [progression, expectedResult];
 };
 export default () => createGame(createBrainProgressionGame, rulesOfGame);
