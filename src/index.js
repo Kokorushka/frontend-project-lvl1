@@ -12,7 +12,7 @@ const createGame = (getGameData, gameRule) => {
 Your answer: `);
     if (userAnswer !== expectedAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'
-Let 's try again, ${userName}!`);
+Let's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');

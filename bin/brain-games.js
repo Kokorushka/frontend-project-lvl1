@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import getAndPrintName from '../src/cli.js';
+import runProgressionGame from '../src/games/brain-progression-game.js';
 
-getAndPrintName();
+runProgressionGame();
