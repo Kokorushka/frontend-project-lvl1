@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import runProgressionGame from '../src/games/brain-progression-game.js';
+import readlineSync from 'readline-sync';
 
-runProgressionGame();
+console.log('Welcome to the Brain Games!');
+const userName = readlineSync.question('May I have your name? ');
+console.log(`Hello, ${userName}!`);
