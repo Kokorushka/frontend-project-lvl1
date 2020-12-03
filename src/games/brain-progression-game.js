@@ -13,6 +13,6 @@ const createBrainProgressionGame = () => {
     progression.push(nextProgressionNum);
   }
   const expectedResult = (initial + (indexForChange * step)).toString();
-  return [progression, expectedResult];
+  return [progression.join(' '), expectedResult];
 };
 export default () => createGame(createBrainProgressionGame, rulesOfGame);
