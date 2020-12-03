@@ -12,10 +12,10 @@ const getGreatCommonDelimeter = (num1, num2) => {
   return gcd;
 };
 const createBrainGcdGame = () => {
-  const randomNumber1 = generateNumber(1, 100);
-  const randomNumber2 = generateNumber(1, 100);
-  const expression = `${randomNumber1} ${randomNumber2}`;
-  const greatCommonDelimeter = getGreatCommonDelimeter(randomNumber1, randomNumber2);
+  const num1 = generateNumber(1, 100);
+  const num2 = generateNumber(1, 100);
+  const expression = `${num1} ${num2}`;
+  const greatCommonDelimeter = getGreatCommonDelimeter(num1, num2);
   return [expression, greatCommonDelimeter.toString()];
 };
 export default () => createGame(createBrainGcdGame, rulesOfGame);

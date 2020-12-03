@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 import getAndPrintName from './cli.js';
 
-const createGame = (func, rules) => {
+const createGame = (getGameData, gameRule) => {
   const userName = getAndPrintName();
-  console.log(`${rules}`);
+  console.log(`${gameRule}`);
   const maxRoundAmount = 3;
   for (let i = 0; i < maxRoundAmount; i += 1) {
-    const [expression, expectedAnswer] = func();
+    const [expression, expectedAnswer] = getGameData();
     const userAnswer = readlineSync.question(`Question: ${expression}
 Your answer: `);
     if (userAnswer !== expectedAnswer) {
