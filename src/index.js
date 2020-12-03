@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
-import getAndPrintName from './cli.js';
 
 const createGame = (getGameData, gameRule) => {
-  const userName = getAndPrintName();
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(`${gameRule}`);
   const maxRoundAmount = 3;
   for (let i = 0; i < maxRoundAmount; i += 1) {
