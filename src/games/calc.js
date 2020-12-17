@@ -18,8 +18,8 @@ const rulesOfGame = 'What is the result of the expression?';
 const createBrainCalcGame = () => {
   const number1 = generateNumber(-100, 100);
   const number2 = generateNumber(-100, 100);
-  const index = generateNumber(0, 2);
   const signs = ['+', '-', '*'];
+  const index = generateNumber(0, signs.length - 1);
   const sign = signs[index];
   const expression = `${number1} ${sign} ${number2}`;
   const expectedResult = calculate(number1, number2, sign);
